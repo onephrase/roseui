@@ -74,7 +74,7 @@ const Router = class extends Component {
 			if ((anchor = e.target.closest('a')) 
 			&& (href = anchor.getAttribute('href'))) {
 				var e2 = this.route(href, null, anchor.getAttribute('target'));
-				if (e2.isDefaultPrevented) {
+				if (e2.defaultPrevented) {
 					e.preventDefault();
 				}
 			}
