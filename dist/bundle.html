@@ -1,0 +1,95 @@
+
+
+	<!-- NAMESPACE: html/page/documentation/intro -->
+	<chtml-import chtml-ns="html/page/documentation/intro">
+      
+      <div chtml-role="page-content content" chtml-bindings="title.el.html:$.title" style="background:black; color:white">
+        <div>
+          <h1 chtml-role="content-title"></h1>
+          <ul>
+            <li><a href="/rosewell/tests/documentation/"><< Back to Documentation page</a></li>
+            <li><a href="/rosewell/tests/"><< Back to Home page</a></li>
+          </ul>
+        </div>
+      </div>
+      
+	</chtml-import>
+
+
+<!-- NAMESPACE: xml/page/documentation/_notes/dwsync --><?xml version="1.0" encoding="utf-8" ?>
+<dwsync chtml-ns="xml/page/documentation/_notes/dwsync">
+<file name="intro.html" server="C:/xampp/htdocs/OnePhrase/JS/" local="132250762513626530" remote="132250762510000000" Dst="0" />
+</dwsync>
+
+
+
+	<!-- NAMESPACE: html/page/documentation -->
+	<chtml-import chtml-ns="html/page/documentation">
+      
+      <div chtml-role="page-content content" chtml-bindings="title.el.html:$.title" style="background:whitesmoke">
+        <div>
+          <h1 chtml-role="content-title"></h1>
+          <ul>
+            <li><a href="/rosewell/tests/"><< Back to Home page</a> OR <a href="/rosewell/tests/documentation/intro/">Go to Intro  >></a></li>
+            <li><a href="/rosewell/tests/download/">Go to Download  >></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <chtml-import chtml-ns="html/pagegroup//html/page/documentation" chtml-role="page-children"></chtml-import>
+      
+	</chtml-import>
+
+
+
+	<!-- NAMESPACE: html/page/download -->
+	<chtml-import chtml-ns="html/page/download">
+      
+      <div chtml-role="page-content content" chtml-bindings="title.el.html:$.title" style="background:azure">
+        <div>
+          <h1 chtml-role="content-title"></h1>
+          <ul>
+            <li><a href="/rosewell/tests/"><< Back to Home page</a></li>
+            <li><a href="/rosewell/tests/documentation/">Go to Documentation  >></a></li>
+          </ul>
+        </div>
+      </div>
+      
+	</chtml-import>
+
+
+<!-- NAMESPACE: xml/page/_notes/dwsync --><?xml version="1.0" encoding="utf-8" ?>
+<dwsync chtml-ns="xml/page/_notes/dwsync">
+<file name="documentation.html" server="C:/xampp/htdocs/OnePhrase/JS/" local="132250764591706922" remote="132250764590000000" Dst="0" />
+<file name="download.html" server="C:/xampp/htdocs/OnePhrase/JS/" local="132250762093381943" remote="132250762090000000" Dst="0" />
+</dwsync>
+
+
+
+    <!-- NAMESPACE: html/page -->
+    <div chtml-ns="html/page" chtml-role="page" class="flex-x-center txt-align-cntr">
+	  <script type="application/chtml-cps">
+        @bindings {
+            $ && content.$render:$.content;
+            $ && children.$render:$.children;
+            el.attrAsync:('class', 'pos-abs offset-0', true);
+            $.active && el.cssAsync:{zIndex:6, opacity:1};
+            $ && !$.active && el.cssAsync:('z-index', 1).then(() => el.play({opacity: 0}, {duration:600}).then(() => el.css('z-index', -1)));
+            $ && content.el.play:($.activeChild.hasActiveChild ? {width:'0%'} : ($.hasActiveChild ? {width:'20%'} : {width:'100%'}), {duration:600});
+        }
+      </script>
+	  <section chtml-role="page-content" class="wt-full flex-x-center flex-y-center overflow-hidden">Title...</section>
+	  <chtml-import chtml-ns="html/pagegroup//html/page" chtml-role="page-children" class="col-grows overflow-hidden"></chtml-import>
+	</div>
+
+
+
+     <!-- NAMESPACE: html/pagegroup -->
+     <section chtml-ns="html/pagegroup"></section>
+
+
+<!-- NAMESPACE: xml/_notes/dwsync --><?xml version="1.0" encoding="utf-8" ?>
+<dwsync chtml-ns="xml/_notes/dwsync">
+<file name="page.html" server="C:/xampp/htdocs/OnePhrase/JS/" local="132251512322059113" remote="132251512320000000" Dst="0" />
+<file name="pagegroup.html" server="C:/xampp/htdocs/OnePhrase/JS/" local="132249838839446499" remote="132249838830000000" Dst="0" />
+</dwsync>
