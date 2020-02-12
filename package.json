@@ -27,9 +27,9 @@
     "watch": "npm run watch-js && npm run watch-html"
   },
   "dependencies": {
-    "@onephrase/chtml": "^0.0.0",
+    "@onephrase/chtml": "^0.0.1",
     "@onephrase/commons": "0.0.0",
-    "@onephrase/observable": "^0.0.0"
+    "@onephrase/observable": "^0.0.1"
   },
   "devDependencies": {
     "webpack": "^4.41.0",

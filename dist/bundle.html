@@ -69,9 +69,9 @@
     <!-- NAMESPACE: html/page -->
     <div chtml-ns="html/page" chtml-role="page" class="flex-x-center txt-align-cntr">
 	  <script type="text/jsen-p">
-        @bindings {
-            $ && content.$render:$.content;
-            $ && children.$render:$.children;
+        @directives {
+            $ && content.$bind:$.content;
+            $ && children.$bind:$.children;
             el.attrAsync:('class', 'pos-abs offset-0', true);
             $.active && el.cssAsync:{zIndex:6, opacity:1};
             $ && !$.active && el.cssAsync:('z-index', 1).then(() => el.play({opacity: 0}, {duration:600}).then(() => el.css('z-index', -1)));
@@ -90,6 +90,6 @@
 
 <!-- NAMESPACE: xml/_notes/dwsync --><?xml version="1.0" encoding="utf-8" ?>
 <dwsync chtml-ns="xml/_notes/dwsync">
-<file name="page.html" server="C:/xampp/htdocs/OnePhrase/JS/" local="132258067586828103" remote="132258067580000000" Dst="0" />
+<file name="page.html" server="C:/xampp/htdocs/OnePhrase/JS/" local="132259609322661571" remote="132259609320000000" Dst="0" />
 <file name="pagegroup.html" server="C:/xampp/htdocs/OnePhrase/JS/" local="132249838839446499" remote="132249838830000000" Dst="0" />
 </dwsync>
