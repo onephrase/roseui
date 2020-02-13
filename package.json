@@ -27,11 +27,6 @@
     "watch": "npm run watch-js && npm run watch-html"
   },
   "dependencies": {
-    "@onephrase/chtml": "file:../chtml",
-    "@onephrase/commons": "file:../commons",
-    "@onephrase/observable": "file:../observable"
-  },
-  "-dependencies": {
     "@onephrase/chtml": "^0.0.3",
     "@onephrase/commons": "^0.0.1",
     "@onephrase/observable": "^0.0.2"
