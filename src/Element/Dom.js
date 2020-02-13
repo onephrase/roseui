@@ -2,24 +2,16 @@
 /**
  * @imports
  */
-import {
-	_isArray,
-	_isBoolean,
-	_isString,
-	_isObject,
-	_isUndefined
-} from '@onephrase/commons/src/Js.js';
-import {
-	_remove,
-	_from as _arr_from
-} from '@onephrase/commons/src/Arr.js';
-import {
-	_each,
-	_from as _obj_from
-} from '@onephrase/commons/src/Obj.js';
-import {
-	_toCamel
-} from '@onephrase/commons/src/Str.js';
+import _isString from '@onephrase/commons/js/isString.js';
+import _isArray from '@onephrase/commons/js/isArray.js';
+import _isObject from '@onephrase/commons/js/isObject.js';
+import _isBoolean from '@onephrase/commons/js/isBoolean.js';
+import _isUndefined from '@onephrase/commons/js/isUndefined.js';
+import _arrFrom from '@onephrase/commons/arr/from.js';
+import _remove from '@onephrase/commons/arr/remove.js';
+import _objFrom from '@onephrase/commons/obj/from.js';
+import _each from '@onephrase/commons/obj/each.js';
+import _toCamel from '@onephrase/commons/str/toCamel.js';
 import Reflow from './Reflow.js';
 
 /**
@@ -157,7 +149,7 @@ const domData = function(el, requestOrPayload, val = null) {
 	}
 	var payload = requestOrPayload;
 	if (!_isObject(requestOrPayload)) {
-		payload = _obj_from(requestOrPayload, val);
+		payload = _objFrom(requestOrPayload, val);
 	}
 	_each(payload, (key, val) => {
 		customDataset[_toCamel(key)] = val;
@@ -197,7 +189,7 @@ const domAttr = function(el, requestOrPayload, valOrMutation = null, subValMutat
 	}
 	var payload = requestOrPayload;
 	if (!_isObject(payload)) {
-		payload = _obj_from(requestOrPayload, valOrMutation);
+		payload = _objFrom(requestOrPayload, valOrMutation);
 	} else {
 		subValMutation = valOrMutation;
 	}
@@ -458,7 +450,7 @@ const domMutationCallback = function(els, callback, test = null, context = null,
 			// Is contextly mutated...
 			if (observeContext) {
 				matches = nodeListArray
-					.reduce((collection, node) => collection.concat(_arr_from(node.querySelectorAll(el))), []);
+					.reduce((collection, node) => collection.concat(_arrFrom(node.querySelectorAll(el))), []);
 				if (matches.length) {
 					return matches;
 				}
@@ -482,13 +474,13 @@ const domMutationCallback = function(els, callback, test = null, context = null,
 	var mo = new MutationObserver(mutations => {
 		if (test !== 0) {
 			var matchedAddedNodes = [];
-			_arr_from(els).forEach(el => {
+			_arrFrom(els).forEach(el => {
 				if (_isString(el)) {
 					matchedAddedNodes = mutations
-						.reduce((matches, mut) => matches.concat(search(el, _arr_from(mut.addedNodes)), matchedAddedNodes));
+						.reduce((matches, mut) => matches.concat(search(el, _arrFrom(mut.addedNodes)), matchedAddedNodes));
 				} else {
 					var matchedAsAddedNode = mutations
-						.reduce((match, mut) => match || search(el, _arr_from(mut.addedNodes)), null);
+						.reduce((match, mut) => match || search(el, _arrFrom(mut.addedNodes)), null);
 					if (matchedAsAddedNode) {
 						matchedAddedNodes.push(matchedAsAddedNode);
 					}
@@ -500,13 +492,13 @@ const domMutationCallback = function(els, callback, test = null, context = null,
 		}
 		if (test !== 1) {
 			var matchedRemovedNodes = [];
-			_arr_from(els).forEach(el => {
+			_arrFrom(els).forEach(el => {
 				if (_isString(el)) {
 					matchedRemovedNodes = mutations
-						.reduce((matches, mut) => matches.concat(search(el, _arr_from(mut.removedNodes)), matchedRemovedNodes));
+						.reduce((matches, mut) => matches.concat(search(el, _arrFrom(mut.removedNodes)), matchedRemovedNodes));
 				} else {
 					var matchedAsRemovedNode = mutations
-						.reduce((match, mut) => match || search(el, _arr_from(mut.removedNodes)), null);
+						.reduce((match, mut) => match || search(el, _arrFrom(mut.removedNodes)), null);
 					if (matchedAsRemovedNode) {
 						matchedRemovedNodes.push(matchedAsRemovedNode);
 					}

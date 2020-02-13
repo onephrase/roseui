@@ -2,16 +2,10 @@
 /**
  * @imports
  */
-import {
-	_sort
-} from '@onephrase/commons/src/Arr.js';
-import {
-	_isObject
-} from '@onephrase/commons/src/Js.js';
-import {
-	_copy,
-	_with
-} from '@onephrase/commons/src/Obj.js';
+import _sort from '@onephrase/commons/arr/sort.js';
+import _isObject from '@onephrase/commons/js/isObject.js';
+import _copy from '@onephrase/commons/obj/copy.js';
+import _with from '@onephrase/commons/obj/with.js';
 import Component from '../Component.js';
 
 /**

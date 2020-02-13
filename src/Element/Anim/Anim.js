@@ -3,22 +3,6 @@
  * @imports
  */
 import {
-	_each
-} from '@onephrase/commons/src/Obj.js';
-import {
-	_exclude,
-	_pushUnique
-} from '@onephrase/commons/src/Arr.js';
-import {
-	_isArray,
-	_isFunction,
-	_isNumber,
-	_isNumeric,
-	_isObject,
-	_isString,
-	_isUndefined
-} from '@onephrase/commons/src/Js.js';
-import {
 	cssRead,
 	cssWrite,
 	cssComputeAsync,
@@ -26,6 +10,16 @@ import {
 	cssVarRead,
 	autopx as cssAutopx
 } from '../Css/Css.js';
+import _each from '@onephrase/commons/obj/each.js';
+import _exclude from '@onephrase/commons/arr/exclude.js';
+import _pushUnique from '@onephrase/commons/arr/pushUnique.js';
+import _isString from '@onephrase/commons/js/isString.js';
+import _isArray from '@onephrase/commons/js/isArray.js';
+import _isObject from '@onephrase/commons/js/isObject.js';
+import _isNumber from '@onephrase/commons/js/isNumber.js';
+import _isNumeric from '@onephrase/commons/js/isNumeric.js';
+import _isFunction from '@onephrase/commons/js/isFunction.js';
+import _isUndefined from '@onephrase/commons/js/isUndefined.js';
 import TransformRule from '../Css/TransformRule.js';
 import Reflow from '../Reflow.js';
 

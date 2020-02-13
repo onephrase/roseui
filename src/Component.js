@@ -2,12 +2,8 @@
 /**
  * @imports
  */
-import {
-	_isClass
-} from '@onephrase/commons/src/Js.js';
-import {
-	_inherit
-} from '@onephrase/commons/src/Obj.js';
+import _isClass from '@onephrase/commons/js/isClass.js';
+import _inherit from '@onephrase/commons/obj/inherit.js';
 import Observable from '@onephrase/observable';
 
 /**

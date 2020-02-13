@@ -2,17 +2,10 @@
 /**
  * @imports
  */
-import {
-	_sort
-} from '@onephrase/commons/src/Arr.js';
-import {
-	_each
-} from '@onephrase/commons/src/Obj.js';
-import {
-	_isArray,
-	_isFunction,
-	_isClass
-} from '@onephrase/commons/src/Js.js';
+import _each from '@onephrase/commons/obj/each.js';
+import _isArray from '@onephrase/commons/js/isArray.js';
+import _isFunction from '@onephrase/commons/js/isFunction.js';
+import _isClass from '@onephrase/commons/js/isClass.js';
 import Component from '../Component.js';
 import Frame from './Frame.js';
 

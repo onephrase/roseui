@@ -2,9 +2,7 @@
 /**
  * @imports
  */
-import {
-	_from as _obj_from
-} from '@onephrase/commons/src/Obj.js';
+import _objFrom from '@onephrase/commons/obj/from.js';
 
 /**
  * ---------------------------
@@ -50,7 +48,7 @@ const Multitap = {
 			}
 		}
 		hammertime.on(eventName, e => fireCallback(e.type, {
-			context:_obj_from(e.type, e)
+			context:_objFrom(e.type, e)
 		}));
 	},
 	

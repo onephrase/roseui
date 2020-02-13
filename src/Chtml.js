@@ -2,12 +2,7 @@
 /**
  * @imports
  */
-import {
-	_mixin
-} from '@onephrase/commons/src/Js.js';
-import {
-	_inherit
-} from '@onephrase/commons/src/Obj.js';
+import _inherit from '@onephrase/commons/obj/inherit.js';
 import _Chtml from '@onephrase/chtml';
 import Element from './Element/Element.js';
 import Component from './Component.js';

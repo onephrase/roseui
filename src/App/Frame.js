@@ -2,14 +2,10 @@
 /**
  * @imports
  */
-import {
-	_copy,
-	_first as _obj_first
-} from '@onephrase/commons/src/Obj.js';
-import {
-	_isObject,
-	_isNumeric
-} from '@onephrase/commons/src/Js.js';
+import _isObject from '@onephrase/commons/js/isObject.js';
+import _isNumeric from '@onephrase/commons/js/isNumeric.js';
+import _copy from '@onephrase/commons/obj/copy.js';
+import _objFirst from '@onephrase/commons/obj/first.js';
 import Component from '../Component.js';
 import Frameset from './Frameset.js';
 
@@ -48,7 +44,7 @@ const Frame = class extends Component {
 		const select = (children, path) => {
 			if (children && path) {
 				var routePathSlotVal = _isNumeric(routePathSlot) ? path.arr[routePathSlot] : path.obj[routePathSlot];
-				var activeChild = _obj_first(children.select(routePathSlotVal));
+				var activeChild = _objFirst(children.select(routePathSlotVal));
 				return this.set({
 					activeChild: activeChild,
 					hasActiveChild: activeChild ? true : false,

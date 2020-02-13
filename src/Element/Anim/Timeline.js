@@ -2,10 +2,8 @@
 /**
  * @imports
  */
-import {
-	_isArray,
-	_isFunction
-} from '@onephrase/commons/src/Js.js';
+import _isArray from '@onephrase/commons/js/isArray.js';
+import _isFunction from '@onephrase/commons/js/isFunction.js';
 import Anim from './Anim.js';
 
 /**

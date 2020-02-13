@@ -2,13 +2,9 @@
 /**
  * @imports
  */
-import {
-	_isObject,
-	_isNumeric
-} from '@onephrase/commons/src/Js.js';
-import {
-	_from as _arr_from
-} from '@onephrase/commons/src/Arr.js';
+import _isObject from '@onephrase/commons/js/isObject.js';
+import _isNumeric from '@onephrase/commons/js/isNumeric.js';
+import _arrFrom from '@onephrase/commons/arr/from.js';
 
 /**
  * ----------------------------------------
@@ -33,7 +29,7 @@ const Transaction = class {
 	 */
 	constructor(el, params, readCallback, writeCallback) {
 		this.el = el;
-		this.params = _arr_from(params);
+		this.params = _arrFrom(params);
 		this.readCallback = readCallback;
 		this.writeCallback = writeCallback;
 		this.$savepoints = [];

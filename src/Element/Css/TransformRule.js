@@ -2,13 +2,9 @@
 /**
  * @imports
  */
-import {
-	_each
-} from '@onephrase/commons/src/Obj.js';
-import {
-	_isArray,
-	_isNumeric
-} from '@onephrase/commons/src/Js.js';
+import _each from '@onephrase/commons/obj/each.js';
+import _isArray from '@onephrase/commons/js/isArray.js';
+import _isNumeric from '@onephrase/commons/js/isNumeric.js';
 
 /**
  * ------------------------------

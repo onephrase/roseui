@@ -3,12 +3,6 @@
  * @imports
  */
 import {
-	_remove,
-} from '@onephrase/commons/src/Arr.js';
-import {
-	_isUndefined,
-} from '@onephrase/commons/src/Js.js';
-import {
 	from as domFrom,
 	find as domFind,
 	domData,
@@ -40,6 +34,8 @@ import {
 	offsetTo,
 	scrollTo,
 } from './Geometry/Rect.js';
+import _remove from '@onephrase/commons/arr/remove.js';
+import _isUndefined from '@onephrase/commons/js/isUndefined.js';
 
 /**
  * ---------------------------

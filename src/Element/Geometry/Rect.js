@@ -2,23 +2,17 @@
 /**
  * @imports
  */
-import {
-	_isArray,
-	_isObject,
-	_isString,
-	_isNumeric
-} from '@onephrase/commons/src/Js.js';
-import {
-	_any,
-	_intersect,
-	_from as _arr_from
-} from '@onephrase/commons/src/Arr.js';
-import {
-	_each,
-	_copy,
-	_merge,
-	_with
-} from '@onephrase/commons/src/Obj.js';
+import _isString from '@onephrase/commons/js/isString.js';
+import _isArray from '@onephrase/commons/js/isArray.js';
+import _isObject from '@onephrase/commons/js/isObject.js';
+import _isNumeric from '@onephrase/commons/js/isNumeric.js';
+import _any from '@onephrase/commons/arr/any.js';
+import _intersect from '@onephrase/commons/arr/intersect.js';
+import _arrFrom from '@onephrase/commons/arr/from.js';
+import _copy from '@onephrase/commons/obj/copy.js';
+import _each from '@onephrase/commons/obj/each.js';
+import _merge from '@onephrase/commons/obj/merge.js';
+import _with from '@onephrase/commons/obj/with.js';
 import {
 	cssRead
 } from '../Css/Css.js';
@@ -118,7 +112,7 @@ const rect = function(el, size = true, offsetOrigin = null) {
  */
 const size = function(el, axis) {
 	var _size = rect(el, true, false);
-	var axes = axis ? _arr_from(axis) : ['x', 'y'];
+	var axes = axis ? _arrFrom(axis) : ['x', 'y'];
 	if (!axes.includes('x')) {
 		delete _size.width;
 	}
@@ -139,7 +133,7 @@ const size = function(el, axis) {
  */
 const offsets = function(el, axis, origin = null) {
 	var _offsets = rect(el, false, origin);
-	var axes = axis ? _arr_from(axis) : ['x', 'y'];
+	var axes = axis ? _arrFrom(axis) : ['x', 'y'];
 	if (!axes.includes('x')) {
 		delete _offsets.left;
 	}
@@ -440,7 +434,7 @@ const proximity = function(rect1, rect2, axis, previousProximity) {
 	_proximity.y = _proximity.y || {};
 	previousProximity = _copy(previousProximity);
 	// X,Y processing...
-	(axis ? _arr_from(axis) : ['x', 'y']).forEach(axis => {
+	(axis ? _arrFrom(axis) : ['x', 'y']).forEach(axis => {
 		// In the context of the given axis...
 		var distanceBefore = axis === 'x' ? 'left' : 'top';
 		var distanceAfter = axis === 'x' ? 'right' : 'bottom';
@@ -673,7 +667,7 @@ const positioningOffsets = function(el, anchors = ['left', 'top', 'right', 'bott
  */
 const zHeight = function(el) {
 	var zIndex = 0;
-	_arr_from(el.children).forEach((el, i) => {
+	_arrFrom(el.children).forEach((el, i) => {
 		zIndex = Math.max(zIndex, parseInt(cssRead(el, 'z-index')) || 0);
 	});
 	return zIndex;

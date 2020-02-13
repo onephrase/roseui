@@ -3,30 +3,22 @@
  * @imports
  */
 import {
-	_fromCamel,
-	_toCamel
-} from '@onephrase/commons/src/Str.js';
-import {
-	_isArray,
-	_isObject,
-	_isFunction,
-	_isString,
-	_isNumeric,
-	_isUndefined
-} from '@onephrase/commons/src/Js.js';
-import {
-	_flatten,
-	_replace,
-	_from as _arr_from
-} from '@onephrase/commons/src/Arr.js';
-import {
-	_copyPlain,
-	_each,
-	_from as _obj_from
-} from '@onephrase/commons/src/Obj.js';
-import {
 	vendorPrefix
 } from '../../App/Client.js';
+import _fromCamel from '@onephrase/commons/str/fromCamel.js';
+import _toCamel from '@onephrase/commons/str/toCamel.js';
+import _isString from '@onephrase/commons/js/isString.js';
+import _isArray from '@onephrase/commons/js/isArray.js';
+import _isObject from '@onephrase/commons/js/isObject.js';
+import _isNumeric from '@onephrase/commons/js/isNumeric.js';
+import _isFunction from '@onephrase/commons/js/isFunction.js';
+import _isUndefined from '@onephrase/commons/js/isUndefined.js';
+import _arrFrom from '@onephrase/commons/arr/from.js';
+import _flatten from '@onephrase/commons/arr/flatten.js';
+import _replace from '@onephrase/commons/arr/replace.js';
+import _objFrom from '@onephrase/commons/obj/from.js';
+import _copyPlain from '@onephrase/commons/obj/copyPlain.js';
+import _each from '@onephrase/commons/obj/each.js';
 import Transaction from '../Transaction.js';
 import Reflow from '../Reflow.js';
 import TransformRule from './TransformRule.js';
@@ -74,7 +66,7 @@ const cssRead = function(el, props, psuedo = null) {
  */
 const cssWrite = function(el, nameOrProps, val = null) {
 	nameOrProps = typeof nameOrProps === 'string' 
-		? _obj_from(nameOrProps, val)
+		? _objFrom(nameOrProps, val)
 		: nameOrProps;
 	var destructables = {
 		inset: ['top', 'right', 'bottom', 'left'],
@@ -435,7 +427,7 @@ const normalizeToWAAPI = function(animationProps, offset, prefix = '') {
  */
 const ruleCallback = function(props, callback, withVendorVersion) {
 	var valsList = {};
-	var propsList = _arr_from(props);
+	var propsList = _arrFrom(props);
 	var callCallback = (i, prop) => {
 		// We use the key as given, but we obtain value with
 		// We support camel cases, but return their normalized versions

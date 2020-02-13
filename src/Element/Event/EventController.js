@@ -3,27 +3,19 @@
  * @imports
  */
 import {
-	_toTitle
-} from '@onephrase/commons/src/Str.js';
-import {
-	_from as _arr_from
-} from '@onephrase/commons/src/Arr.js';
-import {
-	_find,
-	_from as _obj_from
-} from '@onephrase/commons/src/Obj.js';
-import {
-	_isString,
-	_isFunction,
-	_isArray
-} from '@onephrase/commons/src/Js.js';
+	domData
+} from '../Dom.js';
 import {
 	EventController as _EventController,
 	Event
 } from '@onephrase/observable';
-import {
-	domData
-} from '../Dom.js';
+import _toTitle from '@onephrase/commons/str/toTitle.js';
+import _arrFrom from '@onephrase/commons/arr/from.js';
+import _objFrom from '@onephrase/commons/obj/from.js';
+import _find from '@onephrase/commons/obj/find.js';
+import _isString from '@onephrase/commons/js/isString.js';
+import _isArray from '@onephrase/commons/js/isArray.js';
+import _isFunction from '@onephrase/commons/js/isFunction.js';
 import CustomEvents from './CustomEvents.js';
 
 /**
@@ -74,7 +66,7 @@ const EventController = class extends _EventController {
 		}
 		if (CustomEvents[NAME]) {
 			if (_isString(CustomEvents[NAME])) {
-				this.$.activeHooks[NAME] = e => this.fire(NAME, {context:_obj_from(NAME, e)});
+				this.$.activeHooks[NAME] = e => this.fire(NAME, {context:_objFrom(NAME, e)});
 				// Setup: we'll observe CustomEvents[NAME] to process and push the CUSTOM event/state.
 				this.addListener(CustomEvents[NAME], this.$.activeHooks[NAME]);
 			} else if (_isFunction(CustomEvents[NAME].setup)) {
@@ -105,10 +97,10 @@ const EventController = class extends _EventController {
 				recognizer.recognizeWith(recognizers.slice(i + 1));
 			});
 			// Listen now...
-			this.$.activeHooks[NAME] = e => this.fire(NAME, {context:_obj_from(NAME, e)});
+			this.$.activeHooks[NAME] = e => this.fire(NAME, {context:_objFrom(NAME, e)});
 			this.$.hammertime.on(NAME.split('+').join(' '), this.$.activeHooks[NAME]);
 		} else {
-			this.$.activeHooks[NAME] = e => this.fire(NAME, {context:_obj_from(NAME, e)});
+			this.$.activeHooks[NAME] = e => this.fire(NAME, {context:_objFrom(NAME, e)});
 			// Setup: we'll observe a native event to process and push ours.
 			this.el.addEventListener(NAME, this.$.activeHooks[NAME]);
 		}
@@ -154,11 +146,11 @@ const EventController = class extends _EventController {
 	 */
 	addListener(...args) {
 		var listener = super.addListener(...args);
-		_arr_from(listener.eventNames).forEach(NAME => {
+		_arrFrom(listener.eventNames).forEach(NAME => {
 			this._setup(NAME, listener.params);
 		});
 		listener.removeCallback = () => {
-			_arr_from(listener.eventNames).forEach(NAME => {
+			_arrFrom(listener.eventNames).forEach(NAME => {
 				this._teardown(NAME);
 			});
 		};
